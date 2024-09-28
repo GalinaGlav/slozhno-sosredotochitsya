@@ -2,4 +2,340 @@
 
 .page {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
+  background-image: var(--bg-image, url(../images/cover-image-dark.png));
+  background-attachment: fixed;  
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: var(--main-color-text, #F1B2CE);
+  font-family: var(--font-family, sans-serif);
+  padding: 10px;
+  font-weight: 400;
+  font-size: 18px;
+}
+
+.header {
+  inline-size: 100%;
+  block-size: 100vh;
+  min-block-size: 668px;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+  position: relative;
+  margin-block-end: 40px;
+}
+
+@media (768px<= width <1024px) {
+  .header {
+    min-block-size: 1024px;
+  }
+}
+
+@media  (width>=1024px) {
+  .header {
+    min-block-size: 768px;
+  }
+}
+
+.decorated-zone::before {
+  content: "";
+  inline-size: 25px;
+  block-size: 25px;
+  border-inline-end: 1px solid var(--accent-color-text,#FF0070);
+  border-block-start: 1px solid var(--accent-color-text,#FF0070);
+  position: absolute;
+  inset-inline-end: 0;
+  inset-block-start:0;
+}
+
+.decorated-zone::after {
+  content: "";
+  inline-size: 25px;
+  block-size: 25px;
+  border-inline-start: 1px solid var(--accent-color-text,#FF0070);
+  border-block-end: 1px solid var(--accent-color-text,#FF0070);
+  position: absolute;
+  inset-inline-start: 0;
+  inset-block-end: 20px;
+}
+
+.decorated-zone_element {
+  position: absolute;
+  inset-inline-end: 19px;
+  inset-block-start: 0;
+  color: var(--accent-color-text,#FF0070);
+}
+
+.decorated-zone_element::after {
+  content: "";
+  display: inline-block;
+  background-color: var(--accent-color-text,#FF0070);
+  border-radius: 50%;
+  inline-size: 9px;
+  block-size: 9px;
+  transform: translate(125%);
+  box-shadow: 0px 0px 4px var(--accent-color-text,#FF0070);
+}
+
+.header__theme-menu {
+  justify-self: end;
+}
+
+@media (768px<= width <1024px) {
+  .header__theme-menu {
+    justify-self: center;
+    align-self: start;
+  }
+}
+
+@media  (width>=1024px) {
+  .header__theme-menu {
+    justify-self: center;
+    align-self: start;
+  }
+}
+
+
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+@media (768px<= width <1024px) {
+  .header__theme-menu-list {
+    flex-direction: row;
+  }
+}
+
+@media  (width>=1024px) {
+  .header__theme-menu-list {
+    flex-direction: row;
+  }
+}
+
+.header__theme-menu-button {
+  background-color: transparent;
+  border: none;
+  color: var(--accent-text-title,#ff0070);
+  text-transform: lowercase;
+  line-height: 25px;
+  text-align: center;
+  inline-size: 70px;
+  cursor: pointer;
+}
+
+.header__theme-menu-button_active {
+  border: 1px solid var(--accent-text-title,#ff0070);
+}
+
+.header_title {
+  color: var(--accent-color-header-title, #d800ff);
+  text-shadow: 4px 4px 0 var(--accent-color-text,#FF0070);
+  font-weight: 700;
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  line-height: 82.5%;
+  padding-block-end: 20px;
+}
+
+@media (768px<= width <1024px) {
+  .header_title {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+}
+
+@media  (width>=1024px) {
+  .header_title {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+}
+
+.title-decor {
+  background-color: var(--accent-bg-color,#FF0070);
+  color: var(--color-text-subtitle, #000028);
+}
+
+.header-description {
+  font-weight: 700;
+  line-height: 23.4px;
+  inline-size: 100%;
+  margin-block-end: 48px;
+}
+
+@media (768px<= width <1024px) {
+  .header-description {
+    justify-self: end;
+    align-self: center;
+  }
+  
+}
+
+@media  (width>=1024px) {
+  .header-description {
+    justify-self: end;
+    align-self: center;
+  }
+  
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  background-color: var(--bg-color, #000028);
+}
+
+@media (768px<= width <1024px) {
+  .content {
+    gap: 80px;
+  }
+  
+}
+
+@media  (width>=1024px) {
+  .content {
+    gap: 80px;
+  }
+}
+
+.content-section {
+  display: grid;
+  grid-template-rows: min-content 1fr;
+  grid-row-gap: 20px;
+ 
+}
+.content-section:last-of-type {
+  margin-block-end: 40px;
+}
+
+.content-section_title {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 23.4px;
+  color: var(--accent-color-title,#FF0070);
+}
+
+.content-section_list {
+ display: flex;
+ flex-direction: column;
+ gap: 20px;
+ font-size: 18px;
+ line-height: 23.4px;
+}
+
+.card {
+ display: flex;
+ flex-direction: column;
+ gap: 10px;
+}
+
+.card-title {
+font-family: var(--font-family, sans-serif);
+font-weight: 700;
+font-size: 18px;
+}
+
+.card-subtitle {
+font-weight: 400;
+}
+
+.link {
+  text-decoration: none;
+  text-shadow: 2px 2px 0px var(--accent-color-text,#FF0070);
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.link:focus {
+  outline: none;
+}
+
+.link:focus-visible {
+outline: 1px solid var(--main-color-text,#f1b2ce);
+}
+
+
+.content-section_image_container {
+  display: grid;
+  gap: 10px;
+}
+
+@media (768px<= width <1024px) {
+  .content-section_image_container {
+    gap: 20px;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(3, 1fr);
+  }
+}
+
+@media  (width>=1024px) {
+  .content-section_image_container {
+    gap: 20px;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(3, 1fr);
+  }
+}
+
+.image-wrapper {
+  inline-size: 355px;
+}
+
+.content_image {
+  display: block;
+  width: 100%;
+    object-fit: cover;
+    object-position: center;
+    min-height: 100%; 
+ 
+}
+
+/* @media (768px<= width <1024px) {
+
+}
+
+@media  (width>=1024px) {
+  .header-description {
+    justify-self: end;
+    align-self: center;
+  }
+  
+}
+@media (768px<= width <1024px) {
+.first {
+  grid-column: span 2;
+}
+.second {
+  grid-row: span 2;
+}
+.third {
+  grid-row: span 2;
+}
+.five {
+  grid-column: span 2;
+}
+  
+} */
+
+.footer {
+  position: relative;
+  inline-size: 100%;
+  block-size: 100vh;
+  min-block-size: 668px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bg-color);
+}
+
+.footer-title {
+  color: var(--accent-color-header-title, #d800ff);
+  font-weight: 700;
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  line-height: 82.5%;
+  text-shadow: 2px 2px 0px var(--accent-color-text,#FF0070);
 }
