@@ -3,11 +3,11 @@
 .page {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
   background-image: var(--bg-image, url(../images/cover-image-dark.png));
-  background-attachment: fixed;  
+  background-attachment: fixed;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  background-color: var(--bg-color,#000028);
+  background-color: var(--bg-color, #000028);
   color: var(--main-color-text, #f1b2ce);
   font-family: var(--font-family, sans-serif);
   font-weight: 400;
@@ -25,7 +25,7 @@
   padding: 10px;
 }
 
-@media (768px<= width <1024px) {
+@media (768px<=width <1024px) {
   .header {
     min-block-size: 1024px;
     padding-inline: 0 20px;
@@ -33,7 +33,7 @@
   }
 }
 
-@media  (width>=1024px) {
+@media (width >=1024px) {
   .header {
     min-block-size: 768px;
     padding-inline: 0 20px;
@@ -54,27 +54,29 @@
 }
 
 .decorated-zone::before {
-  border-inline-end: 1px solid var(--accent-color,#ff0070);
-  border-block-start: 1px solid var(--accent-color,#ff0070);
+  border-inline-end: 1px solid var(--accent-color, #ff0070);
+  border-block-start: 1px solid var(--accent-color, #ff0070);
   inset-inline-end: 10px;
   inset-block-start: 10px;
 }
 
-@media (768px<= width <1024px),(width>=1024px) {
+@media (768px<=width <1024px),
+(width>=1024px) {
   .decorated-zone::before {
     inset-inline-end: 20px;
-    inset-block-start:20px;
+    inset-block-start: 20px;
   }
 }
 
 .decorated-zone::after {
-  border-inline-start: 1px solid var(--accent-color,#ff0070);
-  border-block-end: 1px solid var(--accent-color,#ff0070);
+  border-inline-start: 1px solid var(--accent-color, #ff0070);
+  border-block-end: 1px solid var(--accent-color, #ff0070);
   inset-inline-start: 10px;
   inset-block-end: 10px;
 }
 
-@media (768px<= width <1024px),(width>=1024px) {
+@media (768px<=width <1024px),
+(width>=1024px) {
   .decorated-zone::after {
     inset-inline-start: 20px;
     inset-block-end: 20px;
@@ -85,10 +87,11 @@
   position: absolute;
   inset-inline-end: 29px;
   inset-block-start: 10px;
-  color: var(--accent-color,#ff0070);
+  color: var(--accent-color, #ff0070);
 }
 
-@media (768px<= width <1024px),(width>=1024px) {
+@media (768px<=width <1024px),
+(width>=1024px) {
   .decorated-zone_element {
     inset-inline-end: 39px;
     inset-block-start: 20px;
@@ -98,19 +101,19 @@
 .decorated-zone_element::after {
   content: "";
   display: inline-block;
-  background-color: var(--accent-bg-color,#ff0070);
+  background-color: var(--accent-bg-color, #ff0070);
   border-radius: 50%;
   inline-size: 9px;
   block-size: 9px;
   transform: translate(120%);
-  box-shadow: 0px 0px 4px var(--accent-color-shadow,#ff0070);
+  box-shadow: 0px 0px 4px var(--accent-color-shadow, #ff0070);
 }
 
 .header__theme-menu {
   justify-self: end;
 }
 
-@media  (width>=1024px) {
+@media (width>=1024px) {
   .header__theme-menu {
     justify-self: center;
     align-self: start;
@@ -134,7 +137,7 @@
 .header__theme-menu-button {
   background-color: transparent;
   border: none;
-  color: var(--accent-color,#ff0070);
+  color: var(--accent-color, #ff0070);
   text-transform: lowercase;
   line-height: 25px;
   text-align: center;
@@ -151,11 +154,11 @@
 }
 
 .header__theme-menu-button:focus-visible {
-  border-block-end: 1px solid var(--main-color-text,#f1b2ce);
+  border-block-end: 1px solid var(--main-color-text, #f1b2ce);
 }
 
 .header__theme-menu-button_active {
-  border: 1px solid var(--accent-color,#ff0070);
+  border: 1px solid var(--accent-color, #ff0070);
   pointer-events: none;
 }
 
@@ -167,7 +170,8 @@
   line-height: 82.5%;
 }
 
-@media (768px<= width <1024px), (width>=1024px) {
+@media (768px<=width <1024px),
+(width>=1024px) {
   .header_title {
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
     justify-self: start;
@@ -175,7 +179,7 @@
 }
 
 .title-decor {
-  background-color: var(--accent-bg-color,#ff0070);
+  background-color: var(--accent-bg-color, #ff0070);
   color: var(--color-text-subtitle, #000028);
 }
 
@@ -185,7 +189,7 @@
   inline-size: 355px;
 }
 
-@media (768px<= width <1024px) {
+@media (768px<=width <1024px) {
   .header-description {
     inline-size: 364px;
     justify-self: end;
@@ -207,7 +211,8 @@
   padding-block: 40px;
 }
 
-@media (768px<= width <1024px), (width>=1024px) {
+@media (768px <=width < 1024px),
+(width>=1024px) {
   .content {
     padding-block: 60px;
     padding-inline: 20px;
@@ -215,14 +220,16 @@
   }
 }
 
- .content-section {
+.content-section {
   display: grid;
   grid-template-rows: min-content 1fr;
   row-gap: 20px;
- }
+}
 
- @media (768px<= width <1024px), (width>=1024px) {
-  .content-section_cover, 
+@media (768px<=width <1024px),
+(width>=1024px) {
+
+  .content-section_cover,
   .content-section_adviсe {
     grid-template-columns: 1fr 2fr;
     column-gap: 20px;
@@ -230,7 +237,8 @@
   }
 }
 
-@media (768px<= width <1024px), (width>=1024px)  {
+@media (768px<=width <1024px),
+(width>=1024px) {
   .content-section_reasons {
     grid-template-columns: 1fr 2fr;
     column-gap: 20px;
@@ -250,10 +258,10 @@
 }
 
 .content-section_list {
- display: grid;
- gap: 20px;
- font-size: 18px;
- line-height: 23.4px;
+  display: grid;
+  gap: 20px;
+  font-size: 18px;
+  line-height: 23.4px;
 }
 
 @media (width>=1024px) {
@@ -263,18 +271,18 @@
 }
 
 .card {
- display: flex;
- flex-direction: column;
- gap: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .card-title {
-font-weight: 700;
-font-size: 18px;
+  font-weight: 700;
+  font-size: 18px;
 }
 
 .card-subtitle {
-font-weight: 400;
+  font-weight: 400;
 }
 
 .link {
@@ -291,21 +299,22 @@ font-weight: 400;
 }
 
 .link:focus-visible {
-outline: 1px solid var(--main-color-text,#f1b2ce);
+  outline: 1px solid var(--main-color-text, #f1b2ce);
 }
 
 .content-section_image {
- gap: 10px;
+  gap: 10px;
 }
 
-@media (768px<= width <1024px), (width>=1024px)  {
+@media (768px<=width <1024px),
+(width>=1024px) {
   .content-section_image {
     gap: 20px;
-   }
+  }
 }
 
 .content-section_image_title {
-color: var(--color-text-subtitle, #000028);
+  color: var(--color-text-subtitle, #000028);
 }
 
 .content-section_image_container {
@@ -313,20 +322,20 @@ color: var(--color-text-subtitle, #000028);
   gap: 10px;
 }
 
-@media (768px<= width <1024px) {
+@media (768px<=width <1024px) {
   .content-section_image_container {
     width: 100%;
     gap: 20px;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
     grid-template-rows: min-content 1fr max-content;
   }
 }
 
-@media  (width>=1024px) {
+@media (width>=1024px) {
   .content-section_image_container {
     width: 100%;
     gap: 20px;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, max-content);
   }
 }
@@ -339,16 +348,20 @@ color: var(--color-text-subtitle, #000028);
   object-position: center;
 }
 
-@media (768px<= width <1024px), (width>=1024px) {
+@media (768px<=width <1024px),
+(width>=1024px) {
   .sunset {
     grid-column: span 2;
   }
+
   .ice-cream {
     grid-row: span 2;
   }
+
   .tape {
     grid-row: span 2;
   }
+
   .street {
     grid-column: span 2;
   }
@@ -372,7 +385,7 @@ color: var(--color-text-subtitle, #000028);
   text-shadow: 2px 2px 0px var(--accent-color-shadow, #ff0070);
 }
 
-@media (768px<= width <1024px) {
+@media (768px<=width <1024px) {
   .footer {
     min-block-size: 1024px;
     padding: 20px;
@@ -383,7 +396,7 @@ color: var(--color-text-subtitle, #000028);
   }
 }
 
-@media  (width>=1024px) {
+@media (width>=1024px) {
   .footer {
     min-block-size: 768px;
     padding: 20px;
